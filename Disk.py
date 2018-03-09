@@ -16,12 +16,22 @@ class Disk():
         t.pd()
         for i in range(2):
             t.fd(self.w)
-            t.rt()
+            t.rt(90)
             t.fd(self.h)
-            t.rt()
+            t.rt(90)
 
     def newpos(self, x, y):
         self.x = x
         self.y = y
 
-    # def cleardisk(self):
+    def cleardisk(self):
+        t.pu()
+        t.setpos(self.x, self.y)
+        t.seth(0)
+        t.pencolor("white")
+        t.pd()
+        for i in range(2):
+            t.fd(self.w)
+            t.rt(90)
+            t.fd(self.h)
+            t.rt(90)

@@ -8,5 +8,18 @@ class Pole():
         self.thickness = th
         self.length = ln
         self.colour = colour
-    
-    #def showpole(self):
+
+    def showpole(self):
+        t.pu()
+        t.setpos(self.x, self.y)
+        t.seth(0)
+        t.pd()
+        for i in range(2):
+            t.fd(self.thickness)
+            t.rt()
+            t.fd(self.length)
+            t.rt()
+    #def pushdisk(self, disk):
+
+    #def popdisk(self):
+
