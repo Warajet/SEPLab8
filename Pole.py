@@ -1,3 +1,4 @@
+import turtle as t
 class Pole():
     def __init__(self, nm, x, y, st = [], tp = 0,  th = 1, ln = 50, colour = "black"):
         self.name = nm
@@ -16,10 +17,13 @@ class Pole():
         t.pd()
         for i in range(2):
             t.fd(self.thickness)
-            t.rt()
+            t.rt(90)
             t.fd(self.length)
-            t.rt()
-    #def pushdisk(self, disk):
+            t.rt(90)
 
-    #def popdisk(self):
+    def pushdisk(self, disk):
+        disk.showdisk()
+        self.stack.append(disk)
 
+    def popdisk(self):
+        return self.stack.pop()
