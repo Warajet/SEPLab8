@@ -1,9 +1,9 @@
 import turtle as t
 class Pole():
-    def __init__(self, nm, x, y, st = [], tp = 0,  th = 1, ln = 50, colour = "black"):
+    def __init__(self, nm, x, y, th = 1, ln = 50, colour = "black"):
         self.name = nm
-        self.stack = st
-        self.toppos = tp
+        self.stack = []
+        self.toppos = 0
         self.x = x
         self.y = y
         self.thickness = th
@@ -22,8 +22,12 @@ class Pole():
             t.rt(90)
 
     def pushdisk(self, disk):
+        disk.newpos(self.x ,disk.h * self.toppos)
         disk.showdisk()
         self.stack.append(disk)
+        self.toppos = self.toppos +  1
 
     def popdisk(self):
+        self.toppos = self.toppos -  1
+        self.stack[-1].cleardisk()
         return self.stack.pop()

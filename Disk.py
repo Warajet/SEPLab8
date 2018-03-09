@@ -1,7 +1,7 @@
 import turtle as t
 
 class Disk():
-    def __init__(self, nm, x, y, h, w, colour):
+    def __init__(self, nm, x, y, h, w, colour = "black"):
         self.name = nm
         self.x = x
         self.y = y
@@ -14,11 +14,16 @@ class Disk():
         t.setpos(self.x,self.y)
         t.seth(0)
         t.pd()
-        for i in range(2):
-            t.fd(self.w)
-            t.rt(90)
-            t.fd(self.h)
-            t.rt(90)
+        t.pencolor("black")
+        t.fd(self.w/2)
+        t.lt(90)
+        t.fd(self.h)
+        t.lt(90)
+        t.fd(self.w)
+        t.lt(90)
+        t.fd(self.h)
+        t.lt(90)
+        t.fd(self.w/2)
 
     def newpos(self, x, y):
         self.x = x
@@ -28,10 +33,14 @@ class Disk():
         t.pu()
         t.setpos(self.x, self.y)
         t.seth(0)
-        t.pencolor("white")
         t.pd()
-        for i in range(2):
-            t.fd(self.w)
-            t.rt(90)
-            t.fd(self.h)
-            t.rt(90)
+        t.pencolor("white")
+        t.fd(self.w / 2)
+        t.lt(90)
+        t.fd(self.h)
+        t.lt(90)
+        t.fd(self.w)
+        t.lt(90)
+        t.fd(self.h)
+        t.lt(90)
+        t.fd(self.w / 2)
