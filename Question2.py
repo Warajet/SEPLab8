@@ -1,8 +1,7 @@
 import sys
 from PyQt5.QtCore import QDir, QPoint, QRect, QSize, Qt
 from PyQt5.QtGui import QImage, QImageWriter, QPainter, QPen, qRgb
-from PyQt5.QtWidgets import (QAction, QApplication, QColorDialog, QFileDialog,
-        QInputDialog, QMainWindow, QMenu, QMessageBox, QWidget)
+from PyQt5.QtWidgets import *
 from PyQt5.QtPrintSupport import QPrintDialog, QPrinter
 
 class ScribbleArea(QWidget):
@@ -81,7 +80,9 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.scribbleArea)
 
 
-        self.setWindowTitle("Scribble")
+        self.setWindowTitle("Paint Program")
+        button = QPushButton("Clear", self.scribbleArea)
+        button.clicked.connect(self.scribbleArea.clearImage)
         self.resize(500, 500)
 
 if __name__ == '__main__':
