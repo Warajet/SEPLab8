@@ -1,4 +1,7 @@
-class Hanoi(Object):
+import Disk
+import Pole
+
+class Hanoi():
     def __init__(self, n = 3, start = "A", workspace = "B", destination = "C"):
         self.startp = Pole(start,0,0)
         self.workspacep = Pole(workspace,150,0)
