@@ -1,7 +1,7 @@
 import turtle as t
 
 class Disk():
-    def __init__(self, nm, x, y, h, w, colour):
+    def __init__(self, nm, x, y, h, w, colour = "black"):
         self.name = nm
         self.x = x
         self.y = y
@@ -14,6 +14,8 @@ class Disk():
         t.setpos(self.x,self.y)
         t.seth(0)
         t.pd()
+
+        t.pencolor("black")
         t.fd(self.w/2)
         t.lt(90)
         t.fd(self.h)
@@ -33,7 +35,8 @@ class Disk():
         t.setpos(self.x, self.y)
         t.seth(0)
         t.pd()
-        t.pencolour("white")
+
+        t.pencolor("white")
         t.fd(self.w / 2)
         t.lt(90)
         t.fd(self.h)
